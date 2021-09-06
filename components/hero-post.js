@@ -1,6 +1,7 @@
 import Date from '../components/date';
 import CoverImage from '../components/cover-image';
 import Link from 'next/link';
+import Avatar from './avatar';
 
 export default function HeroPost({ title, coverImage, date, excerpt, author, slug }) {
     return (
@@ -22,8 +23,7 @@ export default function HeroPost({ title, coverImage, date, excerpt, author, slu
                 <div>
                     <p className='text-lg leading-relaxed mb-4'>{excerpt}</p>
                     <div className='flex items-center'>
-                        <img src={author?.picture} className='w-12 h-12 rounded-full mr-4' alt={author?.name} />
-                        <div className='text-xl font-bold'>{author?.name}</div>
+                        <Avatar name={author?.name} picture={author?.picture} />
                     </div>
                 </div>
             </div>

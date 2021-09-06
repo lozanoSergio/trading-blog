@@ -3,7 +3,7 @@ import BlockContent from '@sanity/block-content-to-react';
 
 export default function PostBody({ content }) {
     return (
-        <div className='mb-40 pr-10 max-w-screen-xl'>
+        <div className='lg:mb-40 max-w-screen-xl'>
             <BlockContent
                 blocks={content}
                 projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}

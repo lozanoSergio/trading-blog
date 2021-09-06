@@ -5,7 +5,7 @@
         "dataset": "production"
     },
     "project": {
-        "name": "Next.js Comment-enabled blog",
+        "name": "Sergio Trades Blog & Tutorials",
         "basePath": "/studio"
     },
     "plugins": [

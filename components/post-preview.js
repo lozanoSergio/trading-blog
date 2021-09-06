@@ -6,7 +6,7 @@ import { imageBuilder } from '../lib/sanity';
 
 export default function PostPreview({ title, coverImage, date, excerpt, author, slug }) {
     return (
-        <div className='m-0 mb-5 md:mr-5 lg:mr-10 md:mb-10'>
+        <div className='m-0 mb-10 md:mr-5 lg:mr-15 md:mb-10'>
             <div className='mb-5'>
                 <CoverImage slug={slug} title={title} imageObject={coverImage} url={imageBuilder(coverImage).url()} />
             </div>
@@ -19,7 +19,7 @@ export default function PostPreview({ title, coverImage, date, excerpt, author, 
                 <Date dateString={date} />
             </div>
             <p className='text-lg leading-relaxed mb-4'>{excerpt}</p>
-            <Avatar name={author?.name} picture={author?.picture} />
+            <Avatar name={author?.name} picture={author?.picture} size='medium' />
         </div>
     );
 }

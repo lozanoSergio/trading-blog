@@ -2,12 +2,12 @@ import cn from 'classnames';
 import Link from 'next/link';
 import { imageBuilder } from '../lib/sanity';
 
-export default function CoverImage({ title, url, imageObject, slug }) {
+export default function CoverImage({ title, imageObject, slug }) {
     const image = (
         <img
             width={1240}
             height={540}
-            alt={`Cover Image for ${title}`}
+            alt={`Imágen de portada de ${title}`}
             className={cn('shadow-small', {
                 'hover:shadow-medium transition-shadow duration-200': slug,
             })}
