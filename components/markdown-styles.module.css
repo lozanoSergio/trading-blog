@@ -4,9 +4,12 @@
 
 .markdown p,
 .markdown ul,
-.markdown ol,
-.markdown blockquote {
+.markdown ol {
     @apply my-6;
+}
+
+.markdown blockquote {
+    @apply border-l-4 border-green-500 italic my-8 pl-8 md:pl-12;
 }
 
 .markdown h2 {

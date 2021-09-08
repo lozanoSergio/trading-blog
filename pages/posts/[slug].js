@@ -27,12 +27,12 @@ export default function Post({ post, morePosts, preview }) {
                     <PostTitle>Loading…</PostTitle>
                 ) : (
                     <>
-                        <article>
+                        <article className='container w-full md:max-w-3xl mx-auto pt-10 pb-20'>
                             <Head>
                                 <title>
                                     {post.title} | {CMS_NAME}
                                 </title>
-                                <meta property='og:image' content={post.ogImage.url || HOME_OG_IMAGE_URL} />
+                                <meta property='og:image' content={post.ogImage ?? HOME_OG_IMAGE_URL} />
                             </Head>
                             <PostHeader
                                 title={post.title}
