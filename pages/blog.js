@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Head from 'next/head';
 import Layout from '../components/layout';
 import Container from '../components/container';
 import MoreStories from '../components/more-stories';
@@ -10,6 +11,9 @@ function Blog({ allPosts }) {
     const filteredBlogPosts = allPosts.filter((post) => post.title.toLowerCase().includes(searchValue.toLowerCase()));
     return (
         <Layout>
+            <Head>
+                <title>{CMS_NAME} | Aprende paso a paso </title>
+            </Head>
             <Container>
                 <div className='flex justify-center flex-col my-32'>
                     {filteredBlogPosts.length ? (
