@@ -37,8 +37,8 @@ export default function Index({ allPosts, preview }) {
                         <div className='grid grid-cols-1 md:grid-cols-3 md:col-gap-16 lg:col-gap-32 row-gap-28 md:row-gap-32 mb-10 md:mb-35 mt-8'>
                             {Array(6)
                                 .fill(undefined)
-                                .map((_item) => (
-                                    <PostSkeleton />
+                                .map((_item, index) => (
+                                    <PostSkeleton key={`skeleton-${index}`} />
                                 ))}
                         </div>
                     )}
