@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Layout from '../components/layout';
 import Container from '../components/container';
-import SearchInput from '../components/search-input';
 import MoreStories from '../components/more-stories';
 import PostSkeleton from '../components/post-skeleton';
 import { getAllPostsForHome } from '../lib/api';
