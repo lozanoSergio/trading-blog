@@ -5,6 +5,7 @@ import Container from '../components/container';
 import MoreStories from '../components/more-stories';
 import PostSkeleton from '../components/post-skeleton';
 import { getAllPostsForHome } from '../lib/api';
+import { CMS_NAME } from '../lib/constants';
 
 function Blog({ allPosts }) {
     const [searchValue, setSearchValue] = useState('');

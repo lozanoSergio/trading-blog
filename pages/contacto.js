@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Head from 'next/head';
 import Layout from '../components/layout';
 import Human from '../public/images/richie.svg';
+import { CMS_NAME } from '../lib/constants';
 
 function About() {
     return (
