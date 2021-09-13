@@ -2,6 +2,9 @@ export default {
     name: 'post',
     title: 'Post',
     type: 'document',
+    initialValue: {
+        views: 0,
+    },
     fields: [
         {
             name: 'title',
@@ -41,6 +44,18 @@ export default {
             name: 'publishedAt',
             title: 'Published at',
             type: 'datetime',
+        },
+        {
+            name: 'views',
+            title: 'Views',
+            type: 'number',
+            readOnly: true,
+        },
+        {
+            name: 'summary',
+            title: 'Summary',
+            type: 'text',
+            validation: (Rule) => Rule.max(125).warning('Shorter summaries are usually better'),
         },
         {
             name: 'body',

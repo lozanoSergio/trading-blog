@@ -3,28 +3,28 @@ import Link from 'next/link';
 import { imageBuilder } from '../lib/sanity';
 import LazyLoad from 'react-lazyload';
 
-export default function CoverImage({ title, imageObject, slug, hero }) {
+export default function CoverImage({ title, imageObject, slug, card, width, height }) {
     const image = (
         <img
-            width={hero ? 1496 : 1240}
-            height={540}
+            width={width ?? 1240}
+            height={height ?? 540}
             alt={`Imágen de portada de ${title}`}
-            className={cn('shadow-small', {
+            className={cn(`${card ? 'rounded-lg' : 'rounded-t-lg'}`, {
                 'hover:shadow-medium transition-shadow duration-200': slug,
             })}
             src={imageBuilder(imageObject)
-                .width(hero ? 1496 : 1240)
-                .height(540)
+                .width(width ?? 1240)
+                .height(height ?? 540)
                 .url()}
         />
     );
 
     return (
-        <div className='-mx-5 sm:mx-0'>
+        <>
             {slug ? (
-                <Link as={`/posts/${slug}`} href='/posts/[slug]'>
+                <Link as={`/blog/${slug}`} href='/blog/[slug]'>
                     <a aria-label={title}>
-                        <LazyLoad height={540} offset={100}>
+                        <LazyLoad height={height ?? 540} offset={100}>
                             {image}
                         </LazyLoad>
                     </a>
@@ -32,6 +32,6 @@ export default function CoverImage({ title, imageObject, slug, hero }) {
             ) : (
                 image
             )}
-        </div>
+        </>
     );
 }

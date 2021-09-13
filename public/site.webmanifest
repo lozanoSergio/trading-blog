@@ -1,0 +1,12 @@
+{
+    "name": "La Bitácora del Trading",
+    "short_name": "Trading Bitácora",
+    "icons": [
+        { "src": "/favicon/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+        { "src": "/favicon/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+    ],
+    "theme_color": "#000000",
+    "background_color": "#f3f4f6",
+    "display": "standalone",
+    "description": "Aprende la manera de hacer trading de forma consciente y efectiva."
+}

@@ -29,17 +29,17 @@ export default function Form({ _id }) {
     };
 
     if (isSubmitting) {
-        return <h3>Submitting comment…</h3>;
+        return <h3>Subiendo comentario…</h3>;
     }
     if (hasSubmitted) {
         return (
             <>
-                <h3>Thanks for your comment!</h3>
+                <h3>¡Gracias por tu comentario!</h3>
                 <ul>
                     <li>
-                        Name: {formData.name} <br />
+                        Nombre: {formData.name} <br />
                         Email: {formData.email} <br />
-                        Comment: {formData.comment}
+                        Comentario: {formData.comment}
                     </li>
                 </ul>
             </>
@@ -50,12 +50,12 @@ export default function Form({ _id }) {
         <form onSubmit={handleSubmit(onSubmit)} className='w-full max-w-lg' disabled>
             <input {...register('_id')} type='hidden' name='_id' value={_id} />
             <label className='block mb-5'>
-                <span className='text-gray-700'>Name</span>
+                <span className='text-gray-700'>Nombre</span>
                 <input
                     name='name'
                     {...register('name', { required: true })}
                     className='shadow border rounded py-2 px-3 form-input mt-1 block w-full'
-                    placeholder='John Appleseed'
+                    placeholder='Nombre o nickname'
                 />
             </label>
             <label className='block mb-5'>
@@ -65,17 +65,17 @@ export default function Form({ _id }) {
                     type='email'
                     {...register('email', { required: true })}
                     className='shadow border rounded py-2 px-3 form-input mt-1 block w-full'
-                    placeholder='your@email.com'
+                    placeholder='tu@email.com'
                 />
             </label>
             <label className='block mb-5'>
-                <span className='text-gray-700'>Comment</span>
+                <span className='text-gray-700'>Commentario</span>
                 <textarea
                     {...register('comment', { required: true })}
                     name='comment'
                     className='shadow border rounded py-2 px-3  form-textarea mt-1 block w-full'
                     rows='8'
-                    placeholder='Enter some long form content.'
+                    placeholder='Comenta que te ha parecido...'
                 ></textarea>
             </label>
             {/* errors will return when field validation fails  */}
