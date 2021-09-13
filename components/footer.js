@@ -7,7 +7,7 @@ export default function Footer() {
                         SER - HACER - TENER
                     </h3>
                     <div className='flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2'>
-                        <p className='text-justify'>
+                        <p className='text-justify sm:px-8 lg:px-0'>
                             Aviso legal: Este blog no ha de ser considerado como un consejo de inversión, compra o venta
                             de activos. El contenido proporcionado dentro de esta página web es de carácter educativo,
                             basado en mi propia experiencia personal. El único responsable de manejar tu dinero eres tú.

@@ -1,8 +1,8 @@
 {
     "root": true,
     "api": {
-        "projectId": "0ncaiwz0",
-        "dataset": "production"
+        "projectId": "PULLED_FROM_ENV",
+        "dataset": "PULLED_FROM_ENV"
     },
     "project": {
         "name": "Sergio Trades Blog & Tutorials",
