@@ -7,7 +7,7 @@ export default function Header() {
         <header className='flex w-screen justify-center fixed bg-white tracking-tight md:tracking-tighter leading-tight p-5 top-0 shadow-sm border border-gray-300 z-50'>
             <nav className='flex w-full max-w-screen-xl items-center justify-between'>
                 <Link href='/'>
-                    <>
+                    <a>
                         <Image
                             src={favIcon}
                             className='cursor-pointer'
@@ -15,7 +15,7 @@ export default function Header() {
                             width={32}
                             height={32}
                         />
-                    </>
+                    </a>
                 </Link>
                 <div>
                     <Link href='/contacto'>

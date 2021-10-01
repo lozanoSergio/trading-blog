@@ -7,5 +7,5 @@ export default function Date({ dateString }) {
         return 'No date';
     }
     const date = parseISO(dateString);
-    return <time dateTime={dateString}>{capitalize(format(date, 'LLLL	d, yyyy', { locale: es }))}</time>;
+    return <time dateTime={dateString}>{capitalize(format(date, 'LLLL d, yyyy', { locale: es }))}</time>;
 }

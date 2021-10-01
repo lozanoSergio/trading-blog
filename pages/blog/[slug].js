@@ -28,7 +28,7 @@ export default function Post({ post, morePosts, preview }) {
                 {router.isFallback ? (
                     <PostTitle>Loading…</PostTitle>
                 ) : (
-                    <div className='bg-white border rounded-lg border-gray-300 mt-36'>
+                    <div className='bg-white border rounded-lg border-gray-300 mt-20 md:max-w-4xl'>
                         <article>
                             <Head>
                                 <title>

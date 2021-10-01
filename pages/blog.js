@@ -16,7 +16,7 @@ function Blog({ allPosts }) {
                 <title>{CMS_NAME} | Aprende paso a paso </title>
             </Head>
             <Container>
-                <div className='flex justify-center flex-col my-32'>
+                <div className='flex justify-center flex-col my-20'>
                     {filteredBlogPosts.length ? (
                         <MoreStories posts={filteredBlogPosts} />
                     ) : (

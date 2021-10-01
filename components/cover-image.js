@@ -7,14 +7,14 @@ export default function CoverImage({ title, imageObject, slug, card, width, heig
     const image = (
         <img
             width={width ?? 1240}
-            height={height ?? 540}
+            height={height ?? 640}
             alt={`Imágen de portada de ${title}`}
-            className={cn(`${card ? 'rounded-lg' : 'rounded-t-lg'}`, {
+            className={cn(`${card ? 'rounded-lg shadow-md' : 'rounded-t-lg'}`, {
                 'hover:shadow-medium transition-shadow duration-200': slug,
             })}
             src={imageBuilder(imageObject)
                 .width(width ?? 1240)
-                .height(height ?? 540)
+                .height(height ?? 640)
                 .url()}
         />
     );
@@ -24,7 +24,7 @@ export default function CoverImage({ title, imageObject, slug, card, width, heig
             {slug ? (
                 <Link as={`/blog/${slug}`} href='/blog/[slug]'>
                     <a aria-label={title}>
-                        <LazyLoad height={height ?? 540} offset={100}>
+                        <LazyLoad height={height ?? 640} offset={100}>
                             {image}
                         </LazyLoad>
                     </a>

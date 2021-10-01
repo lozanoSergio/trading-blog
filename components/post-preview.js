@@ -13,18 +13,19 @@ export default function PostPreview({ title, coverImage, date, summary, slug }) 
                     imageObject={coverImage}
                     url={imageBuilder(coverImage).url()}
                     card
-                    height={800}
+                    width={320}
+                    height={180}
                 />
             </div>
             <div className='text-sm italic font-semibold mb-4 text-gray-500'>
                 <Date dateString={date} />
             </div>
-            <h3 className='text-xl mb-3 leading-snug font-semibold'>
+            <h3 className='text-xl mb-3 leading-snug font-semibold max-w-xs'>
                 <Link as={`/blog/${slug}`} href='/blog/[slug]'>
                     <a className='hover:underline'>{title}</a>
                 </Link>
             </h3>
-            <p className='mt-4 text-gray-600'>{summary}</p>
+            <p className='mt-4 text-gray-600 max-w-xs'>{summary}</p>
         </div>
     );
 }
