@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from 'react';
+import LazyLoad from 'react-lazyload';
 import { imageBuilder } from '../lib/sanity';
 import Modal from './modal';
 
@@ -16,7 +17,9 @@ export function Image({ src, alt, style, ...props }) {
     return (
         <div {...rest}>
             <div onClick={handleShowModal}>
-                <img src={imageBuilder(src).url()} alt={alt} style={style} />
+                <LazyLoad height='100%' offset={100}>
+                    <img className='cursor-zoom-in' src={imageBuilder(src).url()} alt={alt} style={style} />
+                </LazyLoad>
             </div>
             {showModal && (
                 <Modal onCancel={handleCloseModal}>
