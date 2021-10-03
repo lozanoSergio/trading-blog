@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Layout from '../components/layout';
 import Human from '../public/images/sergio.webp';
 import { CMS_NAME } from '../lib/constants';
+import NewsLetter from '../components/newsletter';
 
 function About() {
     return (
@@ -11,7 +12,7 @@ function About() {
                 <title>{CMS_NAME} | Contacto </title>
             </Head>
             <div className='px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20'>
-                <div className='grid gap-10 lg:grid-cols-2'>
+                <div className='grid gap-10 lg:grid-cols-2 mb-20'>
                     <div className='lg:pr-10'>
                         <h5 className='mb-4 text-4xl font-extrabold leading-none'>¡Hola soy Sergio!</h5>
                         <p className='mb-6 text-gray-900 text-lg tracking-wide'>
@@ -31,6 +32,7 @@ function About() {
                         <div className='flex items-center space-x-4'>
                             <a
                                 href='https://twitter.com/seergioldr'
+                                target='_blank'
                                 className='text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400'
                             >
                                 <svg viewBox='0 0 24 24' fill='currentColor' className='h-5'>
@@ -38,7 +40,8 @@ function About() {
                                 </svg>
                             </a>
                             <a
-                                href='/'
+                                href='https://t.me/joinchat/6gGAPmKruskwYWU0'
+                                target='_blank'
                                 className='text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400'
                             >
                                 <svg viewBox='0 0 24 24' fill='currentColor' className='h-5'>
@@ -63,6 +66,7 @@ function About() {
                         />
                     </div>
                 </div>
+                <NewsLetter />
             </div>
         </Layout>
     );

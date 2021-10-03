@@ -13,8 +13,8 @@ export default function PostPreview({ title, coverImage, date, summary, slug }) 
                     imageObject={coverImage}
                     url={imageBuilder(coverImage).url()}
                     card
-                    width={320}
-                    height={180}
+                    width={640}
+                    height={320}
                 />
             </div>
             <div className='text-sm italic font-semibold mb-4 text-gray-500'>

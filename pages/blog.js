@@ -6,6 +6,7 @@ import MoreStories from '../components/more-stories';
 import PostSkeleton from '../components/post-skeleton';
 import { getAllPostsForHome } from '../lib/api';
 import { CMS_NAME } from '../lib/constants';
+import NewsLetter from '../components/newsletter';
 
 function Blog({ allPosts }) {
     const [searchValue, setSearchValue] = useState('');
@@ -29,6 +30,7 @@ function Blog({ allPosts }) {
                         </div>
                     )}
                 </div>
+                <NewsLetter />
             </Container>
         </Layout>
     );

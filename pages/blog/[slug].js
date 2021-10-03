@@ -13,7 +13,8 @@ import { getAllPostsWithSlug, getPostAndMorePosts } from '../../lib/api';
 import PostTitle from '../../components/post-title';
 import Head from 'next/head';
 import { CMS_NAME, HOME_OG_IMAGE_URL } from '../../lib/constants';
-import Form from '../../components/form';
+import CommentForm from '../../components/comment-form';
+import NewsLetter from '../../components/newsletter';
 
 export default function Post({ post, morePosts, preview }) {
     const router = useRouter();
@@ -46,7 +47,9 @@ export default function Post({ post, morePosts, preview }) {
                         </article>
                         <div className='px-8 md:px-16'>
                             <Comments comments={post.comments} />
-                            <Form _id={post._id} />
+                            <CommentForm _id={post._id} />
+                            <SectionSeparator />
+                            <NewsLetter />
                             <SectionSeparator />
                             {morePosts.length > 0 && <MoreStories posts={morePosts} />}
                         </div>
