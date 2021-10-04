@@ -12,19 +12,9 @@ export const getServerSideProps = async ({ res }) => {
         production: 'https://tradingbitacora.com',
     }[process.env.NODE_ENV];
 
-    const staticPages = fs
-        .readdirSync(
-            {
-                development: 'pages',
-                production: './',
-            }[process.env.NODE_ENV],
-        )
-        .filter((staticPage) => {
-            return !['_app.js', '_document.js', '404.js', '500.js', 'api', 'sitemap.xml.js'].includes(staticPage);
-        })
-        .map((staticPagePath) => {
-            return `${baseUrl}/${staticPagePath.replace('.js', '').replace('index', '')}`;
-        });
+    const staticPages = ['blog', 'contacto', 'index'].map((staticPagePath) => {
+        return `${baseUrl}/${staticPagePath}`;
+    });
 
     const postsMeta = await getAllPostsForHome();
 
