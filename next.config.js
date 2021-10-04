@@ -30,7 +30,7 @@ module.exports = {
 
 // https://securityheaders.com
 const ContentSecurityPolicy = `
-    default-src 'self';
+    default-src 'self *.sanity.io';
     script-src 'self' 'unsafe-eval' 'unsafe-inline' *.youtube.com *.t.me *.twitter.com *.googletagmanager.com *.sanity.io;
     child-src *.youtube.com *.google.com *.twitter.com *.sanity.io;
     style-src 'self' 'unsafe-inline' *.sanity.io;
