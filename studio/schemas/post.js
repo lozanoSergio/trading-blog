@@ -68,7 +68,6 @@ export default {
             validation: (Rule) => Rule.required(),
         },
     ],
-
     preview: {
         select: {
             title: 'title',

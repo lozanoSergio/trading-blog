@@ -1,7 +1,6 @@
 module.exports = {
     experimental: {
         esmExternals: true,
-        swcLoader: true,
         swcMinify: false,
     },
     reactStrictMode: true,
@@ -30,10 +29,10 @@ module.exports = {
 
 // https://securityheaders.com
 const ContentSecurityPolicy = `
-    default-src 'self *.sanity.io';
-    script-src 'self' 'unsafe-eval' 'unsafe-inline' *.youtube.com *.t.me *.twitter.com *.googletagmanager.com *.sanity.io;
+    default-src 'self';
+    script-src 'self' 'unsafe-eval' 'unsafe-inline' *.youtube.com *.t.me *.twitter.com *.googletagmanager.com cdn.sanity.io;
     child-src *.youtube.com *.google.com *.twitter.com *.sanity.io;
-    style-src 'self' 'unsafe-inline' *.sanity.io;
+    style-src 'self' 'unsafe-inline' cdn.sanity.io;
     img-src * blob: data:;
     media-src 'none';
     connect-src *;
