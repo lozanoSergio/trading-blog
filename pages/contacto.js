@@ -33,6 +33,7 @@ function About() {
                             <a
                                 href='https://twitter.com/seergioldr'
                                 target='_blank'
+                                rel='noopener noreferrer'
                                 className='text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400'
                             >
                                 <svg viewBox='0 0 24 24' fill='currentColor' className='h-5'>
@@ -42,6 +43,7 @@ function About() {
                             <a
                                 href='https://t.me/joinchat/6gGAPmKruskwYWU0'
                                 target='_blank'
+                                rel='noopener noreferrer'
                                 className='text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400'
                             >
                                 <svg viewBox='0 0 24 24' fill='currentColor' className='h-5'>

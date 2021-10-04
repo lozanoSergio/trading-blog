@@ -10,7 +10,6 @@ function MyApp({ Component, pageProps }) {
 
     useEffect(() => {
         const cookieConsent = getCookieConsentValue('hide_cookie_notice');
-        console.log(cookieConsent);
         if (cookieConsent) {
             // Analytics Storage Granted
             ga.consent();

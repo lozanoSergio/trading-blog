@@ -10,7 +10,7 @@ export default function PostBody({ content }) {
     };
 
     return (
-        <div className='mb-20 px-8 md:px-16'>
+        <div className='mb-20 px-8 md:px-16 prose lg:prose-2xl'>
             <BlockContent
                 blocks={content}
                 projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}

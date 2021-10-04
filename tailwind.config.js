@@ -1,4 +1,8 @@
+const { fontFamily } = require('tailwindcss/defaultTheme');
+
 module.exports = {
+    mode: 'jit',
+    purge: ['./pages/**/*.js', './components/**/*.js', './layouts/**/*.js'],
     theme: {
         extend: {
             colors: {
@@ -31,5 +35,9 @@ module.exports = {
         cursor: {
             'zoom-in': 'zoom-in',
         },
+        fontFamily: {
+            sans: ['IBM Plex Sans', ...fontFamily.sans],
+        },
     },
+    plugins: [require('@tailwindcss/typography')],
 };
