@@ -1,6 +1,3 @@
-import fs from 'fs';
-import { format } from 'date-fns';
-
 import { getAllPostsForHome } from '../lib/api';
 import { DESCRIPTION, CMS_NAME, CMS_URL } from '../lib/constants';
 
