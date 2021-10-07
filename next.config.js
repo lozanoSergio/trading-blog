@@ -1,4 +1,11 @@
-module.exports = {
+const withPWA = require('next-pwa');
+
+module.exports = withPWA({
+    pwa: {
+        dest: 'public',
+        register: true,
+        skipWaiting: true,
+    },
     experimental: {
         esmExternals: true,
         swcMinify: false,
@@ -25,18 +32,19 @@ module.exports = {
 
         return config;
     },
-};
+});
 
 // https://securityheaders.com
 const ContentSecurityPolicy = `
     default-src 'self';
-    script-src 'self' 'unsafe-eval' 'unsafe-inline' *.youtube.com *.t.me *.twitter.com *.googletagmanager.com cdn.sanity.io;
+    script-src 'self' 'unsafe-eval' 'unsafe-inline' *.youtube.com *.t.me *.twitter.com *.googletagmanager.com *.google-analytics.com cdn.sanity.io;
     child-src *.youtube.com *.google.com *.twitter.com *.sanity.io;
     style-src 'self' 'unsafe-inline' cdn.sanity.io;
     img-src * blob: data:;
     media-src 'none';
     connect-src *;
     font-src 'self';
+    worker-src 'self';
 `;
 
 const securityHeaders = [
@@ -53,7 +61,7 @@ const securityHeaders = [
     // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
     {
         key: 'X-Frame-Options',
-        value: 'DENY',
+        value: 'SAMEORIGIN',
     },
     // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options
     {

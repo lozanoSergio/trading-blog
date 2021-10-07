@@ -3,7 +3,7 @@ export default function Avatar({ name, picture, size }) {
     const textClass = size === 'small' ? 'text-base' : size === 'medium' ? 'text-lg' : 'text-xl';
     return (
         <div className='flex items-center'>
-            <img src={picture} className={`${sizeClass} rounded-full`} alt={name} />
+            <img src={picture} className={`${sizeClass} rounded-full`} alt={name} height={32} width={32} />
             <div className={`${textClass} font-bold`}>{name}</div>
         </div>
     );

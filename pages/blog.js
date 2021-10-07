@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Head from 'next/head';
 import Layout from '../components/layout';
 import Container from '../components/container';
@@ -9,8 +8,6 @@ import { CMS_NAME } from '../lib/constants';
 import NewsLetter from '../components/newsletter';
 
 function Blog({ allPosts }) {
-    const [searchValue, setSearchValue] = useState('');
-    const filteredBlogPosts = allPosts.filter((post) => post.title.toLowerCase().includes(searchValue.toLowerCase()));
     return (
         <Layout>
             <Head>
@@ -18,8 +15,8 @@ function Blog({ allPosts }) {
             </Head>
             <Container>
                 <div className='flex justify-center flex-col my-20'>
-                    {filteredBlogPosts.length ? (
-                        <MoreStories posts={filteredBlogPosts} />
+                    {allPosts.length ? (
+                        <MoreStories posts={allPosts} />
                     ) : (
                         <div className='grid grid-cols-1 md:grid-cols-3 md:col-gap-16 lg:col-gap-32 row-gap-28 md:row-gap-32 mb-10 md:mb-35 mt-8'>
                             {Array(6)

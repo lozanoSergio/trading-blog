@@ -18,14 +18,14 @@ export default function HeroPost({ title, coverImage, date, summary, slug }) {
             </div>
             <div className='md:mb-28 md:ml-5 md:max-w-xs'>
                 <div>
-                    <div className='mb-4 text-sm italic font-semibold text-gray-500'>
-                        <Date dateString={date} />
-                    </div>
-                    <h3 className='mb-4 text-3xl font-semibold lg:text-4xl leading-tight'>
+                    <h2 className='mb-4 text-3xl font-semibold leading-tight'>
                         <Link as={`/blog/${slug}`} href='/blog/[slug]'>
                             <a className='hover:underline'>{title}</a>
                         </Link>
-                    </h3>
+                    </h2>
+                    <div className='mb-4 text-sm italic font-semibold text-gray-700'>
+                        <Date dateString={date} />
+                    </div>
                     <p className='text-gray-600'>{summary}</p>
                 </div>
             </div>

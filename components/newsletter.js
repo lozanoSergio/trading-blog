@@ -7,7 +7,7 @@ import ErrorMessage from '../components/error-message';
 import LoadingSpinner from '../components/loader';
 
 import fetcher from '../lib/fetcher';
-import * as ga from '../lib/ga';
+import { logEvent } from '../lib/analytics';
 
 export default function NewsLetter() {
     const [form, setForm] = useState({ state: 'initial' });
@@ -41,7 +41,7 @@ export default function NewsLetter() {
             return;
         }
 
-        ga.event({
+        logEvent({
             action: 'newsletter',
             params: { event_category: 'suscripcion', event_label: 'blog', value: '0' },
         });

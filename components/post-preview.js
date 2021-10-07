@@ -17,7 +17,7 @@ export default function PostPreview({ title, coverImage, date, summary, slug }) 
                     height={320}
                 />
             </div>
-            <div className='text-sm italic font-semibold mb-4 text-gray-500'>
+            <div className='text-sm italic font-semibold mb-4 text-gray-700'>
                 <Date dateString={date} />
             </div>
             <h3 className='text-xl mb-3 leading-snug font-semibold max-w-xs'>
