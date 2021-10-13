@@ -1,11 +1,33 @@
-import markdownStyles from './markdown-styles.module.css';
+import Link from 'next/link';
 import BlockContent from '@sanity/block-content-to-react';
 import { Image } from './image';
+import markdownStyles from './markdown-styles.module.css';
 
 export default function PostBody({ content }) {
     const serializers = {
         types: {
-            image: (props) => <Image src={props.node.asset} />,
+            image: (props) => <Image src={props.node.asset} alt={props.node.alt} />,
+        },
+        marks: {
+            internalLink: ({ mark, children }) => {
+                const { slug = {} } = mark;
+                const href = `/blog/${slug.current}`;
+                return (
+                    <Link href={href}>
+                        <a>{children}</a>
+                    </Link>
+                );
+            },
+            link: ({ mark, children }) => {
+                const { blank, href } = mark;
+                return blank ? (
+                    <a href={href} target='_blank' rel='noopener noreferrer'>
+                        {children}
+                    </a>
+                ) : (
+                    <a href={href}>{children}</a>
+                );
+            },
         },
     };
 

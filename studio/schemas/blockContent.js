@@ -40,14 +40,36 @@ export default {
                 // Annotations can be any object structure – e.g. a link or a footnote.
                 annotations: [
                     {
-                        title: 'URL',
                         name: 'link',
                         type: 'object',
+                        title: 'External link',
                         fields: [
                             {
-                                title: 'URL',
                                 name: 'href',
                                 type: 'url',
+                                title: 'URL',
+                            },
+                            {
+                                title: 'Open in new tab',
+                                name: 'blank',
+                                description: 'open link in new tab with rel="noopener noreferrer"',
+                                type: 'boolean',
+                            },
+                        ],
+                    },
+                    {
+                        name: 'internalLink',
+                        type: 'object',
+                        title: 'Internal link',
+                        fields: [
+                            {
+                                name: 'reference',
+                                type: 'reference',
+                                title: 'Reference',
+                                to: [
+                                    { type: 'post' },
+                                    // other types you may want to link to
+                                ],
                             },
                         ],
                     },
@@ -60,6 +82,13 @@ export default {
         {
             type: 'image',
             options: { hotspot: true },
+            fields: [
+                {
+                    name: 'alternativeText',
+                    type: 'string',
+                    title: 'Alternative Text',
+                },
+            ],
         },
     ],
 };

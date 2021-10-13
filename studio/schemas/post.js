@@ -36,6 +36,13 @@ export default {
                 hotspot: true,
             },
             validation: (Rule) => Rule.required(),
+            fields: [
+                {
+                    name: 'alternativeText',
+                    type: 'string',
+                    title: 'Alternative Text',
+                },
+            ],
         },
         {
             name: 'categories',
