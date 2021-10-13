@@ -5,15 +5,15 @@ const Modal = ({ children, onCancel }) => {
     return (
         <Fragment>
             <div
-                className='modal text-gray-500 flex items-center justify-center overflow-auto z-50'
+                className='text-gray-500 flex items-center justify-center overflow-auto z-50 fixed inset-0 w-full h-full bg-black bg-opacity-50'
                 aria-labelledby='modal-image'
                 role='modal'
                 aria-modal='true'
                 onClick={onCancel}
             >
-                <div className='flex h-screen'>
+                <div className='flex'>
                     <figure className='m-auto p-5 md:p-10'>{children}</figure>
-                    <div className='flex absolute top-14 right-0 md:top-20 md:right-10 z-50'>
+                    <div className='relative mt-10 z-50'>
                         <button onClick={onCancel} className='p-0 w-14 h-14 bg-transparent rounded-full mouse'>
                             <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'>
                                 <g data-name='Layer 2'>
