@@ -37,8 +37,8 @@ module.exports = withPWA({
 // https://securityheaders.com
 const ContentSecurityPolicy = `
     default-src 'self';
-    script-src 'self' 'unsafe-eval' 'unsafe-inline' *.youtube.com *.t.me *.twitter.com *.googletagmanager.com *.google-analytics.com cdn.sanity.io;
-    child-src *.youtube.com *.google.com *.twitter.com *.sanity.io;
+    script-src 'self' 'unsafe-eval' 'unsafe-inline' *.youtube.com *.t.me *.twitter.com *.googletagmanager.com *.google-analytics.com cdn.sanity.io vitals.vercel-insights.com;
+    child-src *.youtube.com *.google.com *.twitter.com *.sanity.io vitals.vercel-insights.com;
     style-src 'self' 'unsafe-inline' cdn.sanity.io;
     img-src * blob: data:;
     media-src 'none';
