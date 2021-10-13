@@ -1,7 +1,6 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment } from 'react';
 
 const Modal = ({ children, onCancel }) => {
-    useEffect(() => {});
     return (
         <Fragment>
             <div
@@ -11,20 +10,21 @@ const Modal = ({ children, onCancel }) => {
                 aria-modal='true'
                 onClick={onCancel}
             >
-                <div className='flex'>
-                    <figure className='m-auto p-5 md:p-10'>{children}</figure>
+                <div className='flex flex-col'>
                     <div className='relative mt-10 z-50'>
-                        <button onClick={onCancel} className='p-0 w-14 h-14 bg-transparent rounded-full mouse'>
-                            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'>
-                                <g data-name='Layer 2'>
-                                    <g data-name='close'>
-                                        <rect width='24' height='24' transform='rotate(180 12 12)' opacity='0' />
-                                        <path d='M13.41 12l4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29-4.3 4.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l4.29-4.3 4.29 4.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42z' />
-                                    </g>
-                                </g>
+                        <button onClick={onCancel} className='float-right pr-5 bg-transparent rounded-full mouse'>
+                            <svg
+                                xmlns='http://www.w3.org/2000/svg'
+                                width='24'
+                                height='24'
+                                fill='#ffffff'
+                                viewBox='0 0 24 24'
+                            >
+                                <path d='M23 20.168l-8.185-8.187 8.185-8.174-2.832-2.807-8.182 8.179-8.176-8.179-2.81 2.81 8.186 8.196-8.186 8.184 2.81 2.81 8.203-8.192 8.18 8.192z' />
                             </svg>
                         </button>
                     </div>
+                    <figure className='m-auto px-5 md:px-10'>{children}</figure>
                 </div>
             </div>
         </Fragment>

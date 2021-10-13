@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 import Container from '../../components/container';
@@ -9,12 +8,12 @@ import PostHeader from '../../components/post-header';
 import Comments from '../../components/comments';
 import SectionSeparator from '../../components/section-separator';
 import Layout from '../../components/layout';
-import { getAllPostsWithSlug, getPostAndMorePosts } from '../../lib/api';
 import PostTitle from '../../components/post-title';
-import Head from 'next/head';
-import { CMS_NAME, HOME_OG_IMAGE_URL } from '../../lib/constants';
 import CommentForm from '../../components/comment-form';
 import NewsLetter from '../../components/newsletter';
+import Meta from '../../components/meta';
+import { getAllPostsWithSlug, getPostAndMorePosts } from '../../lib/api';
+import { CMS_NAME } from '../../lib/constants';
 
 export default function Post({ post, morePosts, preview }) {
     const router = useRouter();
@@ -31,13 +30,11 @@ export default function Post({ post, morePosts, preview }) {
                 ) : (
                     <div className='bg-white border rounded-lg border-gray-300 mt-20 md:max-w-4xl'>
                         <article>
-                            <Head>
-                                <title>
-                                    {post.title} | {CMS_NAME}
-                                </title>
-                                <meta property='og:image' content={post.ogImage ?? HOME_OG_IMAGE_URL} />
-                                <meta name='description' content={post.summary ?? ''} />
-                            </Head>
+                            <Meta
+                                title={`${post.title} | ${CMS_NAME}`}
+                                image={post.ogImage}
+                                description={post.summary}
+                            />
                             <PostHeader
                                 title={post.title}
                                 coverImage={post.coverImage}

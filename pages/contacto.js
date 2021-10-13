@@ -1,16 +1,18 @@
 import Image from 'next/image';
-import Head from 'next/head';
 import Layout from '../components/layout';
-import Human from '../public/images/sergio.webp';
-import { CMS_NAME } from '../lib/constants';
+import Meta from '../components/meta';
 import NewsLetter from '../components/newsletter';
+import { CMS_NAME } from '../lib/constants';
+
+import Human from '../public/images/sergio.webp';
 
 function About() {
     return (
         <Layout>
-            <Head>
-                <title>{CMS_NAME} | Contacto </title>
-            </Head>
+            <Meta
+                title={`${CMS_NAME} | Contacto`}
+                description='Contáctame atrvés de sergio@tradingbitacora.com, intentaré resolver cualquier duda lo mejor que pueda.'
+            />
             <div className='px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20'>
                 <div className='grid gap-10 lg:grid-cols-2 mb-20'>
                     <div className='lg:pr-10'>

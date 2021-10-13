@@ -1,6 +1,11 @@
 import CookieConsent from 'react-cookie-consent';
+import { useRouter } from 'next/router';
 
 export default function CookiesAlert() {
+    const router = useRouter();
+    const handleAccept = () => {
+        router.reload(window.location.pathname);
+    };
     return (
         <CookieConsent
             buttonText='Aceptar'
@@ -12,6 +17,7 @@ export default function CookiesAlert() {
             disableStyles
             enableDeclineButton
             cookieName='hide_cookie_notice'
+            onAccept={handleAccept}
             debug={process.env.NODE_ENV !== 'production'}
         >
             Esta página utiliza cookies para tener un mejor seguimiento de sus artículos.

@@ -1,8 +1,8 @@
-import Head from 'next/head';
 import Layout from '../components/layout';
 import Container from '../components/container';
 import MoreStories from '../components/more-stories';
 import PostSkeleton from '../components/post-skeleton';
+import Meta from '../components/meta';
 import { getAllPostsForHome } from '../lib/api';
 import { CMS_NAME } from '../lib/constants';
 import NewsLetter from '../components/newsletter';
@@ -10,11 +10,12 @@ import NewsLetter from '../components/newsletter';
 function Blog({ allPosts }) {
     return (
         <Layout>
-            <Head>
-                <title>{CMS_NAME} | Aprende paso a paso </title>
-            </Head>
+            <Meta
+                title={`${CMS_NAME} | Artículos sobre trading.`}
+                description='Artículos útiles para aprender trading de principiante a avanzado.'
+            />
             <Container>
-                <div className='flex justify-center flex-col my-20'>
+                <div className='flex justify-center flex-col my-10 md:my-20'>
                     {allPosts.length ? (
                         <MoreStories posts={allPosts} />
                     ) : (

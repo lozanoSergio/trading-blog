@@ -1,7 +1,8 @@
 import Head from 'next/head';
-import { DESCRIPTION, HOME_OG_IMAGE_URL } from '../lib/constants';
+import { CMS_NAME, DESCRIPTION, HOME_OG_IMAGE_URL } from '../lib/constants';
 
-export default function Meta() {
+export default function Meta({ title, description, image }) {
+    const defaultTitle = `${CMS_NAME} | Aprende la forma de hacer trading`;
     return (
         <Head>
             <link rel='manifest' href='/site.webmanifest' />
@@ -21,8 +22,9 @@ export default function Meta() {
             <meta name='msapplication-config' content='/favicon/browserconfig.xml' />
             <meta name='theme-color' content='#ffffff' />
             <link rel='alternate' type='application/rss+xml' href='/feed.xml' />
-            <meta name='description' content={DESCRIPTION} />
-            <meta property='og:image' content={HOME_OG_IMAGE_URL} />
+            <title>{title ?? defaultTitle}</title>
+            <meta name='description' content={description ?? DESCRIPTION} />
+            <meta property='og:image' content={image ?? HOME_OG_IMAGE_URL} />
         </Head>
     );
 }

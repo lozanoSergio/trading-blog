@@ -6,17 +6,11 @@ import Layout from '../components/layout';
 import PostSkeleton from '../components/post-skeleton';
 import NewsLetter from '../components/newsletter';
 import { getAllPostsForHome } from '../lib/api';
-import Head from 'next/head';
-import { CMS_NAME, DESCRIPTION } from '../lib/constants';
 
 export default function Index({ heroPost, morePosts, preview }) {
     return (
         <>
             <Layout preview={preview}>
-                <Head>
-                    <title>{CMS_NAME} | Aprende la forma de hacer trading </title>
-                    <meta name='description' content={DESCRIPTION} />
-                </Head>
                 <Container>
                     <div className='flex flex-col justify-start items-start'>
                         <Intro />
