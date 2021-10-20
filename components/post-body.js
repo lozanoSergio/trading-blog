@@ -21,11 +21,13 @@ export default function PostBody({ content }) {
             link: ({ mark, children }) => {
                 const { blank, href } = mark;
                 return blank ? (
-                    <a href={href} target='_blank' rel='noopener noreferrer'>
+                    <a className='break-words' href={href} target='_blank' rel='noopener noreferrer'>
                         {children}
                     </a>
                 ) : (
-                    <a href={href}>{children}</a>
+                    <a className='break-words' href={href}>
+                        {children}
+                    </a>
                 );
             },
         },
